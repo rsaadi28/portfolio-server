@@ -4,6 +4,8 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 // Configuração do CORS
 app.use(cors()); // Permite todas as origens
 
@@ -44,6 +46,6 @@ app.post('/send', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Servidor rodando na porta 3000');
 });
